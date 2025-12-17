@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-body">
+    <nav class="navbar">
+        <a href="home.html">Store</a>
+        <div class="links">
+            <a href="#">Products</a>
+            <a href="cart.html">Cart</a>
+            <a href="checkout.html">Checkout</a>
+            <a href="#">Wishlist</a>
+        </div>
+        <div class="login">
+            <button onclick="location.href='login.html'">Login</button>
+            <button onclick="location.href='signup.html'">Sign Up</button>
+        </div>
+    </nav>
+
+    <section class="confirmation-section">
+        <div class="confirmation-card">
+            <div class="success-icon">✓</div>
+            <h1>Order Confirmed!</h1>
+            <p>Thank you for your purchase. We have sent a confirmation email with your order details and tracking information.</p>
+            
+            <div class="order-number">
+                Order Reference: #ST-99284
+            </div>
+
+            <div class="confirmation-buttons">
+                <button onclick="location.href='home.html'">Return to Store</button>
+                <button class="btn-secondary" onclick="window.print()">Print Receipt</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

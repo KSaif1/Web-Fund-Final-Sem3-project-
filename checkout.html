@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="home.html">Store</a>
+        <div class="links">
+            <a href="#">Products</a>
+            <a href="cart.html">Cart</a>
+            <a href="checkout.html">Checkout</a>
+            <a href="#">Wishlist</a>
+        </div>
+        <div class="login">
+            <button onclick="location.href='login.html'">Login</button>
+            <button onclick="location.href='signup.html'">Sign Up</button>
+        </div>
+    </nav>
+
+    <section class="checkout-section">
+        <div class="checkout-grid">
+            <div class="checkout-form-container">
+                <h2>Shipping Details</h2>
+                <form class="form" id="checkoutForm">
+                    <div class="form-group-row">
+                        <input type="text" placeholder="First Name">
+                        <input type="text" placeholder="Last Name">
+                    </div>
+                    <input type="email" placeholder="Email Address">
+                    <input type="text" placeholder="Street Address">
+                    <div class="form-group-row">
+                        <input type="text" placeholder="City">
+                        <input type="text" placeholder="Zip Code">
+                    </div>
+                    
+                    <h2 style="margin-top: 30px;">Payment Information</h2>
+                    <input type="text" placeholder="Card Number">
+                    <div class="form-group-row">
+                        <input type="text" placeholder="MM/YY">
+                        <input type="text" placeholder="CVV">
+                    </div>
+                    
+                    <button type="submit" style="margin-top: 30px;">Complete Purchase</button>
+                </form>
+            </div>
+
+            <div class="checkout-summary">
+                <h3>Order Review</h3>
+                <div class="order-items-list">
+                    <div class="mini-item">
+                        <span>Something Product x 1</span>
+                        <strong>$99.99</strong>
+                    </div>
+                </div>
+                
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>$99.99</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span style="color: #28a745; font-weight: 600;">FREE</span>
+                </div>
+                <div class="summary-row summary-total">
+                    <span>Total</span>
+                    <span>$99.99</span>
+                </div>
+                
+                <p class="payment-notice">
+                    Secure encrypted transaction. Your data is safe with us.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    document.getElementById('checkoutForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        window.location.href = 'thank-you.html';
+    });
+    </script>
+</body>
+</html>

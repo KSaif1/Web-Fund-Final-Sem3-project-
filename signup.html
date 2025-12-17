@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,14 +13,14 @@
             <a href="home.html">Store</a> <!--Logo or Home Link-->
             <div class="links">
                 <a href="#">Products</a>
-                <a href="#">Cart</a>
+                <a href="cart.html">Cart</a>
                 <a href="#">Checkout</a>
                 <a href="#">Wishlist</a>
             </div>
             <!--Can be buttons-->
                 <div class="login">
-                    <button>Login</button>
-                    <button>Sign Up</button>
+                    <button onclick="location.href='login.html'">Login</button>
+                    <button onclick="location.href='signup.html'">Sign Up</button>
                 </div>
             </div>
         </nav>
@@ -28,12 +28,62 @@
             <div class="login-container">
                 <h2>Create Your Account</h2>
                 <form class="form">
-                    <input type="text" placeholder="Username">
-                    <input type="email" placeholder="Email">
-                    <input type="password" placeholder="Password">
+                    <div id="signup-message" class="message"></div>
+                    <input type="text" placeholder="Username" id="reg-user">
+                    <input type="email" placeholder="Email" id="reg-email">
+                    <div class="password-wrapper">
+                        <input type="password" placeholder="Password" id="login-pass">
+                        <button type="button" class="toggle-password" id="toggleLoginPass">SHOW</button>
+                    </div>
                     <button type="submit">Sign Up</button>
                 </form>
                 <p class="signup-link">Already have an account? <a href="login.html">Login</a></p>
             </div>
         </section>
+        <script>
+
+            document.getElementById('toggleLoginPass').addEventListener('click', function() {
+            const passInput = document.getElementById('login-pass');
+            const isPassword = passInput.type === 'password';
+            
+            passInput.type = isPassword ? 'text' : 'password';
+            this.textContent = isPassword ? 'HIDE' : 'SHOW';
+        });
+            const signupForm = document.querySelector('.form');
+            const msgBox = document.getElementById('signup-message');
+
+            signupForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                const user = document.getElementById('reg-user').value;
+                const email = document.getElementById('reg-email').value;
+                const pass = document.getElementById('reg-pass').value;
+
+                msgBox.style.display = 'none';
+                msgBox.className = 'message';
+
+                if (!user || !email || !pass) {
+                    msgBox.textContent = "All fields are required.";
+                    msgBox.classList.add('error-message');
+                    msgBox.style.display = 'block';
+                    return;
+                }
+
+                if (pass.length < 6) {
+                    msgBox.textContent = "Password must be at least 6 characters.";
+                    msgBox.classList.add('error-message');
+                    msgBox.style.display = 'block';
+                    return;
+                }
+
+                msgBox.textContent = "Account created! Moving to login...";
+                msgBox.classList.add('success-message');
+                msgBox.style.display = 'block';
+
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 2000);
+            });
+        </script>
     </body>
+</html>
