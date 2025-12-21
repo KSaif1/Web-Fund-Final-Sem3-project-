@@ -6,24 +6,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sign Up Page</title>
         <link rel="stylesheet" href="styles.css">
+        <link href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' rel='stylesheet'>
     </head>
 
-    <body class="login-body">
+    <body>
         <nav class ="navbar">
             <a href="home.html">Store</a> <!--Logo or Home Link-->
             <div class="links">
                 <a href="#">Products</a>
-                <a href="cart.html">Cart</a>
                 <a href="#">Checkout</a>
                 <a href="#">Wishlist</a>
             </div>
-            <!--Can be buttons-->
+
+            <!--Right buttons area-->
+            <div class="icons">
+                <div class="cart">
+                    <button class="icon-btn" onclick="location.href='cart.html'"><i class='bx bx-shopping-bag' style='color:#000000'></i></button>
+                    <span class="cart-text">Cart</span>
+                </div>
+
                 <div class="login">
-                    <button onclick="location.href='login.html'">Login</button>
-                    <button onclick="location.href='signup.html'">Sign Up</button>
+                    <button class="icon-btn" onclick="location.href='login.html'"><i class='bx  bx-user' style='color:#000000'></i></button>
+                    <span class="login-text">Account</span>
                 </div>
             </div>
         </nav>
+
+
         <section class="login-section">
             <div class="login-container">
                 <h2>Create Your Account</h2>
@@ -40,6 +49,9 @@
                 <p class="signup-link">Already have an account? <a href="login.html">Login</a></p>
             </div>
         </section>
+
+
+
         <script>
 
             document.getElementById('toggleLoginPass').addEventListener('click', function() {

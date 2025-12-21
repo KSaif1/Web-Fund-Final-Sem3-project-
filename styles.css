@@ -34,9 +34,56 @@
             gap: 10px;
         }
 
+        .icons {
+            display: flex;
+            gap: 0;
+            align-items: center;
+        }
+
+        .cart,  
         .login {
             display: flex;
-            gap: 10px;
+            gap: 0;
+            position: relative;
+        }
+
+        .cart-text{
+            position: absolute;
+            top: 77%;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s linear;
+        }
+
+        .cart:hover .cart-text{
+           visibility: visible;
+           opacity: 1; 
+        }
+
+
+        .login-text{
+            position: absolute;
+            top: 60%;
+            left: -8px;
+            margin-top: 8px;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s linear;
+        }
+
+        .login:hover .login-text{
+           visibility: visible;
+           opacity: 1; 
         }
 
         a {
@@ -49,12 +96,35 @@
             text-decoration: underline;
         }
 
+        .icon-btn {
+            width: 45px;
+            height: 45px;
+            padding: 0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background-color: transparent;
+            border: none;
+            color: black;
+            position: relative;
+        }
+
+        .icon-btn i {
+            font-size: 24px;
+        }
+
+        .icon-btn:hover {
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+
         button {
             padding: 15px 20px;
             background-color: #007BFF;
             color: white;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s ease;
@@ -68,7 +138,8 @@
         .hero {
             margin-top: 80px;
             height: 600px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #132e59;
+            background: linear-gradient(90deg, rgba(19, 46, 89, 1) 0%, rgba(87, 195, 199, 1) 50%, rgba(83, 186, 237, 1) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -311,80 +382,194 @@
             }
         }
 
-        .login-body {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-            margin-top: 80px;
+        /* Login Page Styles */
+
+
+        
+        .container {
+            max-width: 1500px;
+            margin: 150px auto 40px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
         }
 
-        .login-container {
-            position: relative;
-            z-index: 3;
-            width: 100%;
-            margin: 0;
-            padding: 70px 40px 30px;
-            background: #ffffff;
-            border-radius: 1.25rem;
-            box-shadow: 0 8px 30px rgba(18, 38, 63, 0.08);
-            text-align: center;
+        .sidebar {
+            background-color: #fff;
+            padding: 0;
         }
 
-        .form input[type="text"],
-        .form input[type="email"],
-        .form input[type="password"] {
-            width: 100%;
-            padding: 12px 14px;
-            margin: 10px 0;
-            border: 1px solid #e0e6ef;
-            border-radius: 8px;
+        .sidebar-section {
+            border: 1px solid #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-title {
+            background-color: #f0f0f0;
+            padding: 10px 15px;
+            font-weight: 600;
             font-size: 16px;
-            outline: none;
-            background: #fafbfd;
         }
 
-        .form input:focus {
-            border-color: #007BFF;
-            box-shadow: 0 0 0 3px rgba(0,123,255,0.08);
+        .sidebar-content {
+            padding: 14px;
+            font-size: 14px;
+            line-height: 1.6;
         }
 
-        .form input:hover {
-            border-color: #cbd2e1;
+        .sidebar-content a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            ;
         }
 
-        .form button {
+        .contact-info {
+            margin-top: 15px;
+        }
+
+        .contact-info strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .main-login {
+            background-color: #fff;
+            padding: 40px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .main-login h1 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .main-login .login-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 30px;
+        }
+
+        .login-section h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .login-section p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .login-section label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .login-section input[type="email"],
+        .login-section input[type="password"] {
             width: 100%;
             padding: 12px;
-            margin-top: 10px;
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            transition: border-color 0.3s;
         }
 
-        .form button:hover {
+        .login-section input[type="email"]:focus,
+        .login-section input[type="password"]:focus {
+            outline: none;
+            border-color: #007BFF;
+        }
+
+        .required {
+            color: #ff0000;
+        }
+
+        .btn-signin {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 12px 15px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-signin:hover {
             background-color: #0056b3;
         }
 
-        .signup-link {
-            margin-top: 14px;
-            color: #6b7280;
-            font-size: 14px;
-        }
-        .signup-link a {
-            color: #007BFF;
+        .forgot-password {
+            margin-left: 15px;
+            color: #666;
             text-decoration: none;
             font-size: 14px;
-            
         }
-        .signup-link a:hover {
+
+        .forgot-password:hover {
             text-decoration: underline;
+        }
+
+        .required-fields {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #ff0000;
+        }
+
+        .btn-create {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-create:hover {
+            background-color: #0056b3;
+        }
+
+        .benefits {
+            margin-top: 20px;
+        }
+
+        .benefits p {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .privacy-link {
+            color: #8b0000;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        @media (max-width: 968px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .main-login .login-container {
+                grid-template-columns: 1fr;
+            }
         }
 
         /*cart css*/

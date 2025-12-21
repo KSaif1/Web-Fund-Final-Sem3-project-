@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home Page</title>
         <link rel="stylesheet" href="styles.css">
+        <link href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' rel='stylesheet'>
     </head>
 
     <body>
@@ -13,15 +14,21 @@
             <a href="home.html">Store</a> <!--Logo or Home Link-->
             <div class="links">
                 <a href="#">Products</a>
-                <a href="cart.html">Cart</a>
                 <a href="#">Checkout</a>
                 <a href="#">Wishlist</a>
             </div>
-            <!--Can be buttons-->
-                <div class="login">
-                    <button onclick="location.href='login.html'">Login</button>
-                    <button onclick="location.href='signup.html'">Sign Up</button>
+
+            <div class="icons">
+                <div class="cart">
+                    <button class="icon-btn" onclick="location.href='cart.html'"><i class='bx bx-shopping-bag' style='color:#000000'></i></button>
+                    <span class="cart-text">Cart</span>
                 </div>
+
+                <div class="login">
+                    <button class="icon-btn" onclick="location.href='login.html'"><i class='bx  bx-user' style='color:#000000'></i></button>
+                    <span class="login-text">Account</span>
+                </div>
+            </div>
             </div>
         </nav>
 
