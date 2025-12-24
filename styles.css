@@ -388,10 +388,6 @@ html {
             }
         }
 
-        /* Login Page Styles */
-
-
-        
         .container {
             max-width: 1500px;
             margin: 150px auto 40px;
@@ -722,7 +718,6 @@ html {
         }
 
             /*Checkout css*/
-            /* --- Checkout Layout --- */
             .checkout-section {
                 margin-top: 100px;
                 padding: 40px 20px;
@@ -733,12 +728,11 @@ html {
 
             .checkout-grid {
                 display: grid;
-                grid-template-columns: 1.8fr 1fr; /* Gives more space to form */
+                grid-template-columns: 1.8fr 1fr;
                 gap: 40px;
                 align-items: start;
             }
 
-            /* --- Form Container --- */
             .checkout-form-container {
                 background: white;
                 border-radius: 16px;
@@ -766,7 +760,6 @@ html {
                 margin: 30px 0;
             }
 
-            /* --- Input Styling --- */
             .form-group-row {
                 display: flex;
                 gap: 20px;
@@ -775,10 +768,8 @@ html {
 
             .input-wrapper {
                 width: 100%;
-                margin-bottom: 20px; /* Spacing between stacked inputs */
+                margin-bottom: 20px;
             }
-
-            /* Ensure inputs in a row share width equally */
             .form-group-row .input-wrapper {
                 flex: 1;
                 margin-bottom: 0; 
@@ -809,13 +800,12 @@ html {
                 box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
             }
 
-            /* Card Input Special Styling */
             .card-input-container {
                 position: relative;
             }
 
             .card-input-container input {
-                padding-left: 45px; /* Space for icon */
+                padding-left: 45px;
             }
 
             .card-icon {
@@ -827,7 +817,6 @@ html {
                 color: #888;
             }
 
-            /* --- Button --- */
             .complete-purchase-btn {
                 width: 100%;
                 padding: 16px;
@@ -847,14 +836,13 @@ html {
                 transform: translateY(-1px);
             }
 
-            /* --- Right Side Summary --- */
             .checkout-summary {
                 background: #fafbfd;
                 border-radius: 16px;
                 padding: 30px;
                 border: 1px solid #e0e6ef;
                 position: sticky;
-                top: 120px; /* Sticks when scrolling */
+                top: 120px;
             }
 
             .checkout-summary h3 {
@@ -927,19 +915,6 @@ html {
                 padding: 10px;
                 border-radius: 6px;
             }
-
-            /* Mobile Fix */
-            @media (max-width: 900px) {
-                .checkout-grid {
-                    grid-template-columns: 1fr;
-                }
-                
-                .checkout-summary {
-                    order: -1; /* Puts summary on top for mobile */
-                    position: static;
-                }
-            }
-
             /* Thank you css*/
                 .confirmation-section {
                     min-height: 80vh;
@@ -994,7 +969,6 @@ html {
                     gap: 15px;
                     justify-content: center;
                 }
-                /* Message styles */
                 .message {
                     font-size: 14px;
                     margin-bottom: 15px;
@@ -1057,13 +1031,13 @@ html {
                 .wishlist-section {
                     margin-top: 100px;
                     padding: 40px 20px;
-                    max-width: 1100px;     /* Limits width so it doesn't stretch too far */
-                    margin-left: auto;     /* Pushes from left */
-                    margin-right: auto;    /* Pushes from right */
+                    max-width: 1100px;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
 
                 .wishlist-header {
-                    text-align: center;    /* Centers the title "My Wishlist" */
+                    text-align: center;
                     margin-bottom: 40px;
                 }
 
@@ -1073,7 +1047,6 @@ html {
                     color: #333;
                 }
 
-                /* 2. Card Styling */
                 .wishlist-container {
                     display: flex;
                     flex-direction: column;
@@ -1082,8 +1055,8 @@ html {
 
                 .wishlist-item {
                     display: flex;
-                    align-items: center;   /* Vertically centers image, text, and buttons */
-                    justify-content: space-between; /* Spreads them out nicely */
+                    align-items: center;
+                    justify-content: space-between;
                     background: #fff;
                     padding: 20px;
                     border-radius: 12px;
@@ -1097,7 +1070,6 @@ html {
                     box-shadow: 0 10px 20px rgba(0,0,0,0.08);
                 }
 
-                /* 3. Image Styling - Small, Square & Shadowed */
                 .wishlist-image {
                     width: 150px;
                     height: 150px;
@@ -1108,19 +1080,18 @@ html {
                 .wishlist-image img {
                     width: 100%;
                     height: 100%;
-                    object-fit: cover;      /* Crops nicely */
-                    object-position: center;/* Focuses on the center of the shoe */
+                    object-fit: cover; 
+                    object-position: center;
                     border-radius: 12px;
                     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
                     display: block;
                 }
 
-                /* 4. Text Details */
                 .wishlist-details {
                     flex-grow: 1;
                     display: flex;
                     flex-direction: column;
-                    justify-content: center; /* Ensures text is centered relative to image height */
+                    justify-content: center;
                 }
 
                 .wishlist-name {
@@ -1142,7 +1113,6 @@ html {
                     color: #28a745;
                 }
 
-                /* 5. Buttons */
                 .wishlist-actions {
                     display: flex;
                     gap: 15px;
@@ -1181,26 +1151,6 @@ html {
                     background-color: #ff4757;
                     color: white;
                 }
-
-                /* 6. Mobile Responsive - Centers content inside card on phones */
-                @media (max-width: 768px) {
-                    .wishlist-item {
-                        flex-direction: column;
-                        text-align: center;
-                        padding: 30px;
-                    }
-
-                    .wishlist-image {
-                        margin-right: 0;
-                        margin-bottom: 20px;
-                    }
-
-                    .wishlist-actions {
-                        margin-top: 20px;
-                        width: 100%;
-                        justify-content: center;
-                    }
-                }
                 /*wishlist end*/
 
                 .product-image img,
@@ -1219,15 +1169,14 @@ html {
                     height: 280px; 
                 }
                 
-                /* --- New Arrivals (Grid Layout) --- */
+                /*New Arrivals*/
                 .new-arrivals {
                     padding: 60px 20px;
-                    background-color: #f8f9fa; /* Light grey background to separate from white Featured section */
+                    background-color: #f8f9fa;
                 }
 
                 .arrivals-grid {
                     display: grid;
-                    /* Automatically fits cards: creates columns of at least 250px width */
                     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                     gap: 30px;
                     max-width: 1200px;
@@ -1293,7 +1242,7 @@ html {
                 .newsletter-form button {
                     padding: 10px 15px;
                     border-radius: 0 4px 4px 0;
-                    margin: 0; /* Override generic button margin */
+                    margin: 0;
                 }
 
                 .footer-bottom {
@@ -1306,7 +1255,7 @@ html {
 
                 /* --- Products Page Styling --- */
                 .products-header-section {
-                    margin-top: 80px; /* Space for fixed navbar */
+                    margin-top: 80px;
                     padding: 60px 20px 20px;
                     text-align: center;
                     background-color: #f9f9f9;
@@ -1339,7 +1288,7 @@ html {
 
                 .pd-grid {
                     display: grid;
-                    grid-template-columns: 1.2fr 1fr; /* Image takes slightly more space */
+                    grid-template-columns: 1.2fr 1fr;
                     gap: 60px;
                 }
 
@@ -1400,7 +1349,6 @@ html {
                     padding-bottom: 30px;
                 }
 
-                /* Size Selector */
                 .pd-selector {
                     margin-bottom: 30px;
                 }
@@ -1439,7 +1387,6 @@ html {
                     border-color: #333;
                 }
 
-                /* Actions */
                 .pd-actions {
                     display: flex;
                     gap: 15px;
