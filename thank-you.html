@@ -11,21 +11,20 @@
     <nav class="navbar">
         <a href="home.html">Store</a>
         <div class="links">
-            <a href="#">Products</a>
+            <a href="products.html">Products</a>
             <a href="checkout.html">Checkout</a>
-            <a href="#">Wishlist</a>
+            <a href="wishlist.html">Wishlist</a>
         </div>
-            <div class="icons">
-                <div class="cart">
-                    <button class="icon-btn" onclick="location.href='cart.html'"><i class='bx bx-shopping-bag' style='color:#000000'></i></button>
-                    <span class="cart-text">Cart</span>
-                </div>
-
-                <div class="login">
-                    <button class="icon-btn" onclick="location.href='login.html'"><i class='bx  bx-user' style='color:#000000'></i></button>
-                    <span class="login-text">Account</span>
-                </div>
+        <div class="icons">
+            <div class="cart">
+                <button class="icon-btn" onclick="location.href='cart.html'"><i class='bx bx-shopping-bag' style='color:#000000'></i></button>
+                <span class="cart-text">Cart</span>
             </div>
+            <div class="login">
+                <button class="icon-btn" onclick="location.href='login.html'"><i class='bx  bx-user' style='color:#000000'></i></button>
+                <span class="login-text">Account</span>
+            </div>
+        </div>
     </nav>
 
     <section class="confirmation-section">
@@ -33,16 +32,42 @@
             <div class="success-icon">✓</div>
             <h1>Order Confirmed!</h1>
             <p>Thank you for your purchase. We have sent a confirmation email with your order details and tracking information.</p>
-            
-            <div class="order-number">
-                Order Reference: #ST-99284
-            </div>
-
+            <div class="order-number">Order Reference: #ST-99284</div>
             <div class="confirmation-buttons">
                 <button onclick="location.href='home.html'">Return to Store</button>
                 <button class="btn-secondary" onclick="window.print()">Print Receipt</button>
             </div>
         </div>
     </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>ShoeStore.</h3>
+                <p>Step into the future with our premium collection of performance and lifestyle footwear.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="products.html">All Products</a>
+                <a href="home.html#new-arrivals">New Arrivals</a>
+                <a href="home.html#featured-products">Featured</a>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Care</h3>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe for latest drops and offers.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Go</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ShoeStore Inc. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

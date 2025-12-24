@@ -1,101 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sign Up Page</title>
-        <link rel="stylesheet" href="styles.css">
-        <link href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' rel='stylesheet'>
-    </head>
-
-    <body>
-        <nav class ="navbar">
-            <a href="home.html">Store</a> <!--Logo or Home Link-->
-            <div class="links">
-                <a href="#">Products</a>
-                <a href="#">Checkout</a>
-                <a href="#">Wishlist</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="home.html">Store</a>
+        <div class="links">
+            <a href="products.html">Products</a>
+            <a href="checkout.html">Checkout</a>
+            <a href="wishlist.html">Wishlist</a>
+        </div>
+        <div class="icons">
+            <div class="cart">
+                <button class="icon-btn" onclick="location.href='cart.html'"><i class='bx bx-shopping-bag' style='color:#000000'></i></button>
+                <span class="cart-text">Cart</span>
             </div>
+            <div class="login">
+                <button class="icon-btn" onclick="location.href='login.html'"><i class='bx  bx-user' style='color:#000000'></i></button>
+                <span class="login-text">Account</span>
+            </div>
+        </div>
+    </nav>
 
-            <!--Right buttons area-->
-            <div class="icons">
-                <div class="cart">
-                    <button class="icon-btn" onclick="location.href='cart.html'"><i class='bx bx-shopping-bag' style='color:#000000'></i></button>
-                    <span class="cart-text">Cart</span>
+    <section class="login-section">
+        <div class="login-container">
+            <h2>Create Your Account</h2>
+            <form class="form">
+                <div id="signup-message" class="message"></div>
+                <input type="text" placeholder="Username" id="reg-user">
+                <input type="email" placeholder="Email" id="reg-email">
+                <div class="password-wrapper">
+                    <input type="password" placeholder="Password" id="reg-pass">
+                    <button type="button" class="toggle-password" id="toggleLoginPass">SHOW</button>
                 </div>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p class="signup-link">Already have an account? <a href="login.html">Login</a></p>
+        </div>
+    </section>
 
-                <div class="login">
-                    <button class="icon-btn" onclick="location.href='login.html'"><i class='bx  bx-user' style='color:#000000'></i></button>
-                    <span class="login-text">Account</span>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>ShoeStore.</h3>
+                <p>Step into the future with our premium collection of performance and lifestyle footwear.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="products.html">All Products</a>
+                <a href="home.html#new-arrivals">New Arrivals</a>
+                <a href="home.html#featured-products">Featured</a>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Care</h3>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe for latest drops and offers.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Go</button>
                 </div>
             </div>
-        </nav>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ShoeStore Inc. All rights reserved.</p>
+        </div>
+    </footer>
 
-
-        <section class="login-section">
-            <div class="login-container">
-                <h2>Create Your Account</h2>
-                <form class="form">
-                    <div id="signup-message" class="message"></div>
-                    <input type="text" placeholder="Username" id="reg-user">
-                    <input type="email" placeholder="Email" id="reg-email">
-                    <div class="password-wrapper">
-                        <input type="password" placeholder="Password" id="login-pass">
-                        <button type="button" class="toggle-password" id="toggleLoginPass">SHOW</button>
-                    </div>
-                    <button type="submit">Sign Up</button>
-                </form>
-                <p class="signup-link">Already have an account? <a href="login.html">Login</a></p>
-            </div>
-        </section>
-
-
-
-        <script>
-
-            document.getElementById('toggleLoginPass').addEventListener('click', function() {
-            const passInput = document.getElementById('login-pass');
+    <script>
+        document.getElementById('toggleLoginPass').addEventListener('click', function() {
+            const passInput = document.getElementById('reg-pass');
             const isPassword = passInput.type === 'password';
-            
             passInput.type = isPassword ? 'text' : 'password';
             this.textContent = isPassword ? 'HIDE' : 'SHOW';
         });
-            const signupForm = document.querySelector('.form');
-            const msgBox = document.getElementById('signup-message');
 
-            signupForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-                
-                const user = document.getElementById('reg-user').value;
-                const email = document.getElementById('reg-email').value;
-                const pass = document.getElementById('reg-pass').value;
+        const signupForm = document.querySelector('.form');
+        const msgBox = document.getElementById('signup-message');
 
-                msgBox.style.display = 'none';
-                msgBox.className = 'message';
+        signupForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const user = document.getElementById('reg-user').value;
+            const email = document.getElementById('reg-email').value;
+            const pass = document.getElementById('reg-pass').value;
 
-                if (!user || !email || !pass) {
-                    msgBox.textContent = "All fields are required.";
-                    msgBox.classList.add('error-message');
-                    msgBox.style.display = 'block';
-                    return;
-                }
+            msgBox.style.display = 'none';
+            msgBox.className = 'message';
 
-                if (pass.length < 6) {
-                    msgBox.textContent = "Password must be at least 6 characters.";
-                    msgBox.classList.add('error-message');
-                    msgBox.style.display = 'block';
-                    return;
-                }
-
-                msgBox.textContent = "Account created! Moving to login...";
-                msgBox.classList.add('success-message');
+            if (!user || !email || !pass) {
+                msgBox.textContent = "All fields are required.";
+                msgBox.classList.add('error-message');
                 msgBox.style.display = 'block';
-
-                setTimeout(() => {
-                    window.location.href = 'login.html';
-                }, 2000);
-            });
-        </script>
-    </body>
+                return;
+            }
+            if (pass.length < 6) {
+                msgBox.textContent = "Password must be at least 6 characters.";
+                msgBox.classList.add('error-message');
+                msgBox.style.display = 'block';
+                return;
+            }
+            msgBox.textContent = "Account created! Moving to login...";
+            msgBox.classList.add('success-message');
+            msgBox.style.display = 'block';
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 2000);
+        });
+    </script>
+</body>
 </html>

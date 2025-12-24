@@ -11,83 +11,111 @@
     <nav class="navbar">
         <a href="home.html">Store</a>
         <div class="links">
-            <a href="#">Products</a>
+            <a href="products.html">Products</a>
             <a href="checkout.html">Checkout</a>
-            <a href="#">Wishlist</a>
+            <a href="wishlist.html">Wishlist</a>
         </div>
-            <div class="icons">
-                <div class="cart">
-                    <button class="icon-btn" onclick="location.href='cart.html'"><i class='bx bx-shopping-bag' style='color:#000000'></i></button>
-                    <span class="cart-text">Cart</span>
-                </div>
-
-                <div class="login">
-                    <button class="icon-btn" onclick="location.href='login.html'"><i class='bx  bx-user' style='color:#000000'></i></button>
-                    <span class="login-text">Account</span>
-                </div>
+        <div class="icons">
+            <div class="cart">
+                <button class="icon-btn" onclick="location.href='cart.html'"><i class='bx bx-shopping-bag' style='color:#000000'></i></button>
+                <span class="cart-text">Cart</span>
             </div>
+            <div class="login">
+                <button class="icon-btn" onclick="location.href='login.html'"><i class='bx  bx-user' style='color:#000000'></i></button>
+                <span class="login-text">Account</span>
+            </div>
+        </div>
     </nav>
 
     <section class="checkout-section">
         <div class="checkout-grid">
             <div class="checkout-form-container">
-                <h2>Shipping Details</h2>
                 <form class="form" id="checkoutForm">
-                    <div class="form-group-row">
-                        <input type="text" placeholder="First Name">
-                        <input type="text" placeholder="Last Name">
+                    <div class="form-section">
+                        <h2><i class='bx bx-package'></i> Shipping Details</h2>
+                        <div class="form-group-row">
+                            <div class="input-wrapper"><label>First Name</label><input type="text" placeholder="e.g. John" required></div>
+                            <div class="input-wrapper"><label>Last Name</label><input type="text" placeholder="e.g. Doe" required></div>
+                        </div>
+                        <div class="input-wrapper"><label>Email Address</label><input type="email" placeholder="john@example.com" required></div>
+                        <div class="input-wrapper"><label>Street Address</label><input type="text" placeholder="123 Fashion Ave" required></div>
+                        <div class="form-group-row">
+                            <div class="input-wrapper"><label>City</label><input type="text" placeholder="New York" required></div>
+                            <div class="input-wrapper"><label>Zip Code</label><input type="text" placeholder="10001" required></div>
+                        </div>
                     </div>
-                    <input type="email" placeholder="Email Address">
-                    <input type="text" placeholder="Street Address">
-                    <div class="form-group-row">
-                        <input type="text" placeholder="City">
-                        <input type="text" placeholder="Zip Code">
+                    <div class="divider"></div>
+                    <div class="form-section">
+                        <h2><i class='bx bx-credit-card'></i> Payment Information</h2>
+                        <div class="input-wrapper"><label>Card Number</label><div class="card-input-container"><i class='bx bx-credit-card-front card-icon'></i><input type="text" placeholder="0000 0000 0000 0000" maxlength="19" required></div></div>
+                        <div class="form-group-row">
+                            <div class="input-wrapper"><label>Expiry Date</label><input type="text" placeholder="MM / YY" maxlength="5" required></div>
+                            <div class="input-wrapper"><label>CVV</label><input type="text" placeholder="123" maxlength="3" required></div>
+                        </div>
                     </div>
-                    
-                    <h2 style="margin-top: 30px;">Payment Information</h2>
-                    <input type="text" placeholder="Card Number">
-                    <div class="form-group-row">
-                        <input type="text" placeholder="MM/YY">
-                        <input type="text" placeholder="CVV">
-                    </div>
-                    
-                    <button type="submit" style="margin-top: 30px;">Complete Purchase</button>
+                    <button type="submit" class="complete-purchase-btn">Pay $130.00</button>
                 </form>
             </div>
 
             <div class="checkout-summary">
-                <h3>Order Review</h3>
+                <h3>Order Summary</h3>
                 <div class="order-items-list">
                     <div class="mini-item">
-                        <span>Something Product x 1</span>
-                        <strong>$99.99</strong>
+                        <div class="item-info">
+                            <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/0cf8ccc7-e1c9-48e2-9832-03616fe146dc/custom-nike-air-max-90-shoes-by-you.png" alt="Shoe">
+                            <div><span class="item-name">Nike Air Max 90</span><span class="item-qty">Qty: 1</span></div>
+                        </div>
+                        <strong>$130.00</strong>
                     </div>
                 </div>
-                
-                <div class="summary-row">
-                    <span>Subtotal</span>
-                    <span>$99.99</span>
+                <div class="summary-details">
+                    <div class="summary-row"><span>Subtotal</span><span>$130.00</span></div>
+                    <div class="summary-row"><span>Shipping</span><span style="color: #28a745; font-weight: 600;">Free</span></div>
+                    <div class="summary-row summary-total"><span>Total</span><span>$130.00</span></div>
                 </div>
-                <div class="summary-row">
-                    <span>Shipping</span>
-                    <span style="color: #28a745; font-weight: 600;">FREE</span>
-                </div>
-                <div class="summary-row summary-total">
-                    <span>Total</span>
-                    <span>$99.99</span>
-                </div>
-                
-                <p class="payment-notice">
-                    Secure encrypted transaction. Your data is safe with us.
-                </p>
+                <div class="security-badge"><i class='bx bx-lock-alt'></i> Secure SSL Encryption</div>
             </div>
         </div>
     </section>
 
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>ShoeStore.</h3>
+                <p>Step into the future with our premium collection of performance and lifestyle footwear.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="products.html">All Products</a>
+                <a href="home.html#new-arrivals">New Arrivals</a>
+                <a href="home.html#featured-products">Featured</a>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Care</h3>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe for latest drops and offers.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Go</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ShoeStore Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script>
     document.getElementById('checkoutForm').addEventListener('submit', function(event) {
         event.preventDefault();
-        window.location.href = 'thank-you.html';
+        const btn = document.querySelector('.complete-purchase-btn');
+        btn.innerHTML = "<i class='bx bx-loader-alt bx-spin'></i> Processing...";
+        setTimeout(() => {
+            window.location.href = 'thank-you.html';
+        }, 1500);
     });
     </script>
 </body>

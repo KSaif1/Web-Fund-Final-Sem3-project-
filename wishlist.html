@@ -3,7 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wishlist</title>
+    <title>My Shoe Wishlist</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="wishlist.css">
     <link href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' rel='stylesheet'>
 </head>
+<body>
+    <nav class="navbar">
+        <a href="home.html">Store</a>
+        <div class="links">
+            <a href="products.html">Products</a>
+            <a href="checkout.html">Checkout</a>
+            <a href="wishlist.html">Wishlist</a>
+        </div>
+        <div class="icons">
+            <div class="cart">
+                <button class="icon-btn" onclick="location.href='cart.html'"><i class='bx bx-shopping-bag' style='color:#000000'></i></button>
+                <span class="cart-text">Cart</span>
+            </div>
+            <div class="login">
+                <button class="icon-btn" onclick="location.href='login.html'"><i class='bx bx-user' style='color:#000000'></i></button>
+                <span class="login-text">Account</span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="wishlist-section">
+        <div class="wishlist-header">
+            <h1>Your Favorite Kicks</h1>
+            <p>Ready to complete your look?</p>
+        </div>
+        
+        <div class="wishlist-container" id="wishlist-container">
+            <div class="wishlist-item" data-id="101">
+                <div class="wishlist-image">
+                    <img src="https://images.laced.com/products/e1eb45d1-bf5a-4f31-b9e5-895014069879.jpg?auto=format&fit=max&w=3840&q=75" alt="Air Jordan 1">
+                </div>
+                <div class="wishlist-details">
+                    <h3 class="wishlist-name">Air Jordan 1 Retro High</h3>
+                    <p class="wishlist-price">$180.00</p>
+                    <p class="wishlist-status">In Stock</p>
+                </div>
+                <div class="wishlist-actions">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="remove-wishlist-btn"><i class='bx bx-trash'></i> Remove</button>
+                </div>
+            </div>
+
+            <div class="wishlist-item" data-id="102">
+                <div class="wishlist-image">
+                    <img src="https://solewhat.com/cdn/shop/files/BB550BWG-D_01_96187168-fa76-4fa4-b949-8c60250fdfba.jpg?v=1757563019" alt="New Balance 550">
+                </div>
+                <div class="wishlist-details">
+                    <h3 class="wishlist-name">New Balance 550</h3>
+                    <p class="wishlist-price">$110.00</p>
+                    <p class="wishlist-status">Low Stock</p>
+                </div>
+                <div class="wishlist-actions">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="remove-wishlist-btn"><i class='bx bx-trash'></i> Remove</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="empty-message" style="display: none; text-align: center; padding: 50px;">
+            <p>No shoes in your wishlist yet.</p>
+            <button onclick="location.href='home.html'" class="btn-primary">Browse Shoes</button>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>ShoeStore.</h3>
+                <p>Step into the future with our premium collection of performance and lifestyle footwear.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="products.html">All Products</a>
+                <a href="home.html#new-arrivals">New Arrivals</a>
+                <a href="home.html#featured-products">Featured</a>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Care</h3>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe for latest drops and offers.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Go</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ShoeStore Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="wishlist.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('wishlist-container');
+            const emptyMsg = document.getElementById('empty-message');
+
+            container.addEventListener('click', (e) => {
+                const item = e.target.closest('.wishlist-item');
+                if (e.target.closest('.remove-wishlist-btn')) {
+                    item.classList.add('removing');
+                    setTimeout(() => {
+                        item.remove();
+                        if (document.querySelectorAll('.wishlist-item').length === 0) {
+                            container.style.display = 'none';
+                            emptyMsg.style.display = 'block';
+                        }
+                    }, 300);
+                }
+                if (e.target.closest('.add-to-cart-btn')) {
+                    const name = item.querySelector('.wishlist-name').textContent;
+                    alert(`${name} has been added to your shopping bag.`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

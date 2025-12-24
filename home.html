@@ -11,11 +11,11 @@
 
     <body>
         <nav class ="navbar">
-            <a href="home.html">Store</a> <!--Logo or Home Link-->
+            <a href="home.html">Store</a>
             <div class="links">
-                <a href="#">Products</a>
-                <a href="#">Checkout</a>
-                <a href="#">Wishlist</a>
+                <a href="products.html">Products</a>
+                <a href="checkout.html">Checkout</a>
+                <a href="wishlist.html">Wishlist</a>
             </div>
 
             <div class="icons">
@@ -33,40 +33,192 @@
         </nav>
 
         <section class="hero">
-        <div class="hero-content">
-            <h1>Something Something</h1>
-            <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
-            <div class="hero-buttons">
-                <button>Shop Now</button>
-                <button class="btn-secondary">Browse Collections</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="featured-products">
-        <div class="section-header">
-            <h2>Featured Products</h2>
-            <p>Discover our hottest sellers!</p>
-        </div>
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-image">
-                    yep
-                    <span class="product-badge">NEW</span>
+            <div class="hero-content">
+                <h1>Step Into the Future</h1>
+                <p>Premium footwear designed for performance, comfort, and unmatched style.</p>
+                <div class="hero-buttons">
+                    <button onclick="location.href='products.html'">Shop Collection</button>
+                    <button class="btn-secondary" onclick="document.getElementById('new-arrivals').scrollIntoView()">New Arrivals</button>
                 </div>
-                <div class="product-info">
-                    <h3 class="product-name">Something</h3>
-                    <p class="product-description">Placeholder Placeholder Placeholder Placeholder Placeholder</p>
-                    <div class="product-footer">
-                        <span class="product-price">99.99</span>
-                        <button class="add-to-cart">Add to cart</button>
+            </div>
+        </section>
+
+        <section class="featured-products" id="featured-products">
+            <div class="section-header">
+                <h2>Featured Collection</h2>
+                <p>The most sought-after silhouettes right now.</p>
+            </div>
+            
+            <div class="products-scroller">
+                
+                <div class="product-card" onclick="location.href='product-details.html?id=1'">
+                    <div class="product-image">
+                        <img src="https://images.laced.com/products/e1eb45d1-bf5a-4f31-b9e5-895014069879.jpg?auto=format&fit=max&w=3840&q=75" alt="Air Jordan 1">
+                        <span class="product-badge">GRAIL</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Air Jordan 1 Retro High</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$180.00</span>
+                            <button class="add-to-cart">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="location.href='product-details.html?id=2'">
+                    <div class="product-image">
+                        <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/0cf8ccc7-e1c9-48e2-9832-03616fe146dc/custom-nike-air-max-90-shoes-by-you.png" alt="Nike Air Max">
+                        <span class="product-badge">HOT</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Nike Air Max 90</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$130.00</span>
+                            <button class="add-to-cart">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="location.href='product-details.html?id=3'">
+                    <div class="product-image">
+                        <img src="https://solewhat.com/cdn/shop/files/BB550BWG-D_01_96187168-fa76-4fa4-b949-8c60250fdfba.jpg?v=1757563019" alt="New Balance 550">
+                        <span class="product-badge">TRENDING</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">New Balance 550</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$110.00</span>
+                            <button class="add-to-cart">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="location.href='product-details.html?id=4'">
+                    <div class="product-image">
+                        <img src="https://crossoverconceptstore.com/cdn/shop/files/AdidasSuperstarVintageGreyOne1.jpg?v=1756205168" alt="Adidas Superstar">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Adidas Superstar</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$90.00</span>
+                            <button class="add-to-cart">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="location.href='product-details.html?id=5'">
+                    <div class="product-image">
+                        <img src="https://thefactorykl.com/cdn/shop/files/1_ea547662-687d-4b7c-a59c-1d642e9f0160.jpg?v=1709892309&width=990" alt="Yeezy Boost">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Yeezy Boost 350 V2</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$230.00</span>
+                            <button class="add-to-cart">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="new-arrivals" id="new-arrivals">
+            <div class="section-header">
+                <h2>Just Dropped</h2>
+                <p>Fresh stock for the season.</p>
+            </div>
+            
+            <div class="arrivals-grid">
+                <div class="product-card" onclick="location.href='product-details.html?id=6'">
+                    <div class="product-image">
+                        <img src="https://www.converse.my/media/catalog/product/0/8/0885-CON162050C00011H-1.jpg" alt="Converse Chuck 70">
+                        <span class="product-badge" style="background: black;">NEW</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Converse Chuck 70 High</h3>
+                        <p class="product-description">The timeless classic in black canvas.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$90.00</span>
+                            <button class="add-to-cart">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="location.href='product-details.html?id=7'">
+                    <div class="product-image">
+                        <img src="https://www.workingclassheroes.co.uk/images/products/archive/o/ol/oldskoolblkwht.jpg?width=1998&height=1998&quality=85&mode=pad&format=webp&bgcolor=ffffff" alt="Vans Old Skool">
+                        <span class="product-badge" style="background: black;">NEW</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Vans Old Skool</h3>
+                        <p class="product-description">Durable suede and canvas uppers.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$70.00</span>
+                            <button class="add-to-cart">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="location.href='product-details.html?id=8'">
+                    <div class="product-image">
+                        <img src="https://www.slamdunk.gr/2953700-product_large/nike-dunk-low-retro.jpg" alt="Nike Dunk Low">
+                        <span class="product-badge" style="background: black;">NEW</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Nike Dunk Low Retro</h3>
+                        <p class="product-description">Crisp leather overlays in Black/White.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$110.00</span>
+                            <button class="add-to-cart">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="location.href='product-details.html?id=9'">
+                    <div class="product-image">
+                        <img src="https://www.sportchek.ca/api/v1/product/api/v1/product/image/80653234f?baseStoreId=SC&lang=en_CA&subscription-key=c01ef3612328420c9f5cd9277e815a0e&imwidth=640&impolicy=mZoom" alt="Nike Air Force 1">
+                        <span class="product-badge" style="background: black;">NEW</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Nike Air Force 1 '07</h3>
+                        <p class="product-description">The authentic look in full leather.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$100.00</span>
+                            <button class="add-to-cart">Add</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ShoeStore.</h3>
+                    <p>Step into the future with our premium collection of performance and lifestyle footwear.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#new-arrivals">New Arrivals</a>
+                    <a href="#featured-products">Featured Products</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Care</h3>
+                    <a href="#">Contact Us</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for latest drops and offers.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button>Go</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ShoeStore Inc. All rights reserved.</p>
+            </div>
+        </footer>
     </body>
 
 </html>
