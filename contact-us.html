@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="home.html">Store</a>
+        <div class="links">
+            <a href="products.html">Products</a>
+            <a href="checkout.html">Checkout</a>
+            <a href="wishlist.html">Wishlist</a>
+        </div>
+        <div class="icons">
+            <div class="cart">
+                <button class="icon-btn" onclick="location.href='cart.html'"><i class='bx bx-shopping-bag' style='color:#000000'></i></button>
+                <span class="cart-text">Cart</span>
+            </div>
+            <div class="login">
+                <button class="icon-btn" onclick="location.href='login.html'"><i class='bx  bx-user' style='color:#000000'></i></button>
+                <span class="login-text">Account</span>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="contact-main">
+        <h1>Contact Us</h1>
+        <p>Send us a message if you have any questions or need assistance.</p>
+        <div class="contact-info">
+
+        <form class="form">
+
+                    <div class="form-group">
+                        <label>Name <span class="required">*</span></label>
+                        <input type="text" id="reg-user" required>
+                    </div>
+                
+                    <div class="form-group">
+                        <label>Email <span class="required">*</span></label>
+                        <input type="email" id="reg-email" required>
+                    </div>
+                
+                    <div class="form-group">
+                        <label>Message <span class="required">*</span></label>
+                        <textarea id="reg-message" required></textarea>
+                    </div>
+                
+                    <div>
+                        <button type="submit" class="btn-signin">Send Message</button>
+                    </div>
+
+                </form>
+        </div>
+    </main>
+
+
+    
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>ShoeStore.</h3>
+                <p>Step into the future with our premium collection of performance and lifestyle footwear.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="products.html">All Products</a>
+                <a href="home.html#new-arrivals">New Arrivals</a>
+                <a href="home.html#featured-products">Featured</a>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Care</h3>
+                <a href="contact-us.html">Contact Us</a>
+            </div>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for the latest updates and offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ShoeStore Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script>
+    const contactForm = document.querySelector('.form');
+    
+    const msgBox = document.createElement('div');
+    msgBox.id = 'contact-message';
+    msgBox.className = 'message';
+    msgBox.style.display = 'none';
+    msgBox.style.padding = '1rem';
+    msgBox.style.marginBottom = '1rem';
+    msgBox.style.borderRadius = '4px';
+    contactForm.insertBefore(msgBox, contactForm.firstChild);
+    
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('reg-user').value;
+        const email = document.getElementById('reg-email').value;
+        const message = document.getElementById('reg-message').value;
+        
+        msgBox.style.display = 'none';
+        msgBox.className = 'message';
+        
+        if (!name || !email || !message) {
+            msgBox.textContent = "Please fill in all required fields.";
+            msgBox.style.backgroundColor = '#fee';
+            msgBox.style.color = '#c00';
+            msgBox.style.border = '1px solid #fcc';
+            msgBox.style.display = 'block';
+            return;
+        }
+        
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            msgBox.textContent = "Please enter a valid email address.";
+            msgBox.style.backgroundColor = '#fee';
+            msgBox.style.color = '#c00';
+            msgBox.style.border = '1px solid #fcc';
+            msgBox.style.display = 'block';
+            return;
+        }
+        
+        msgBox.textContent = "Thank you for contacting us! We'll get back to you soon.";
+        msgBox.style.backgroundColor = '#efe';
+        msgBox.style.color = '#0a0';
+        msgBox.style.border = '1px solid #cfc';
+        msgBox.style.display = 'block';
+        
+        setTimeout(() => {
+            contactForm.reset();
+            msgBox.style.display = 'none';
+        }, 3000);
+    });
+    
+    const newsletterForm = document.querySelector('.newsletter-form');
+    newsletterForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const email = this.querySelector('input[type="email"]').value;
+        
+        if (email) {
+            alert('Thank you for subscribing to our newsletter!');
+            this.reset();
+        }
+    });
+</script>
+</body>
+</html>
