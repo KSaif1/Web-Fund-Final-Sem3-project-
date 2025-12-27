@@ -97,5 +97,55 @@
             <p>&copy; 2024 ShoeStore Inc. All rights reserved.</p>
         </div>
     </footer>
+
+
+
+    <script>
+
+        const loginForm = document.querySelector('form');
+        const loginSection = document.querySelector('.login-section');
+
+        const msgBox = document.createElement('div');
+        msgBox.id = 'login-message';
+        msgBox.className = 'message';
+        msgBox.style.display = 'none';
+        loginSection.insertBefore(msgBox, loginForm);
+
+
+    
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            const email = document.querySelector('input[type="email"]').value;
+            const password = document.querySelector('input[type="password"]').value;
+
+            msgBox.style.display = 'none';
+            msgBox.className = 'message';
+        
+            if (!email || !password) {
+                msgBox.textContent = "Please fill in all fields.";
+                msgBox.classList.add('error-message');
+                msgBox.style.display = 'block';
+                return;
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+                msgBox.textContent = "Please enter a valid email address.";
+                msgBox.classList.add('error-message');
+                msgBox.style.display = 'block';
+                return;
+            }
+
+            msgBox.textContent = "Login successful! Redirecting...";
+            msgBox.classList.add('success-message');
+            msgBox.style.display = 'block';
+        
+            setTimeout(() => {
+                window.location.href = 'home.html';
+            }, 1500);
+        });
+    </script>
 </body>
 </html>

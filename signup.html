@@ -27,22 +27,69 @@
         </div>
     </nav>
 
-    <section class="login-section">
-        <div class="login-container">
-            <h2>Create Your Account</h2>
-            <form class="form">
-                <div id="signup-message" class="message"></div>
-                <input type="text" placeholder="Username" id="reg-user">
-                <input type="email" placeholder="Email" id="reg-email">
-                <div class="password-wrapper">
-                    <input type="password" placeholder="Password" id="reg-pass">
-                    <button type="button" class="toggle-password" id="toggleLoginPass">SHOW</button>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title">Shop with us</div>
+                <div class="sidebar-content"><a href="#">Privacy Policy</a></div>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-title">Need Help?</div>
+                <div class="sidebar-content">
+                    If you have any questions or need help with your account, you may <a href="#">contact us</a> to assist you.
+                    <div class="contact-info">
+                        <strong>Customer Care:</strong> E-mail: <a href="mailto:customers@example.com">customers@example.com</a><br>
+                        <strong>Operating hours:</strong> Mondays to Fridays, excluding Public Holidays, 09:00 - 17:00
+                    </div>
                 </div>
-                <button type="submit">Sign Up</button>
-            </form>
-            <p class="signup-link">Already have an account? <a href="login.html">Login</a></p>
-        </div>
-    </section>
+            </div>
+        </aside>
+
+
+        <main class="main-login">
+            <h1>Sign Up</h1>
+            <div class="login-container">
+
+                <div class="login-section">
+                <h2>Create Your Account</h2>
+            
+                <div id="signup-message" class="message" style="display:none; padding:1rem; margin-bottom:1rem; border-radius:4px;"></div>
+            
+                <form class="form">
+
+                    <div class="form-group">
+                        <label>Username <span class="required">*</span></label>
+                        <input type="text" id="reg-user" required>
+                    </div>
+                
+                    <div class="form-group">
+                        <label>Email <span class="required">*</span></label>
+                        <input type="email" id="reg-email" required>
+                    </div>
+                
+                    <div class="form-group">
+                        <label>Password <span class="required">*</span></label>
+                        <div style="position: relative;">
+                            <input type="password" id="reg-pass" required>
+                            <button type="button" id="toggleLoginPass" class="toggle-password">SHOW</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Confirm Password <span class="required">*</span></label>
+                        <input type="password" id="reg-confirm-pass" required>
+                    </div>
+                
+                    <div>
+                        <button type="submit" class="btn-signin">Create Account</button>
+                    </div>
+                
+                    <div class="required-fields">* Required Fields</div>
+                </form>
+                    </div>
+                </div>
+        </main>
+    </div>
 
     <footer class="site-footer">
         <div class="footer-content">
@@ -72,6 +119,7 @@
         <div class="footer-bottom">
             <p>&copy; 2024 ShoeStore Inc. All rights reserved.</p>
         </div>
+        
     </footer>
 
     <script>
@@ -90,11 +138,12 @@
             const user = document.getElementById('reg-user').value;
             const email = document.getElementById('reg-email').value;
             const pass = document.getElementById('reg-pass').value;
+            const confirmPass = document.getElementById('reg-confirm-pass').value;
 
             msgBox.style.display = 'none';
             msgBox.className = 'message';
 
-            if (!user || !email || !pass) {
+            if (!user || !email || !pass || !confirmPass) {
                 msgBox.textContent = "All fields are required.";
                 msgBox.classList.add('error-message');
                 msgBox.style.display = 'block';
@@ -102,6 +151,12 @@
             }
             if (pass.length < 6) {
                 msgBox.textContent = "Password must be at least 6 characters.";
+                msgBox.classList.add('error-message');
+                msgBox.style.display = 'block';
+                return;
+            }
+            if (pass !== confirmPass) {
+                msgBox.textContent = "Passwords do not match.";
                 msgBox.classList.add('error-message');
                 msgBox.style.display = 'block';
                 return;
