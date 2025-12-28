@@ -485,7 +485,7 @@ html {
         .login-section input[type="email"],
         .login-section input[type="password"],
         .login-section input[type="text"]{
-            width: 800px;
+            width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
             font-size: 14px;
