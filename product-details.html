@@ -45,6 +45,7 @@
             <div class="footer-column">
                 <h3>Customer Care</h3>
                 <a href="contact-us.html">Contact Us</a>
+                <a href="team.html">Meet The Team</a>
             </div>
             <div class="footer-column">
                 <h3>Newsletter</h3>
@@ -123,7 +124,7 @@
                                     <button id="qty-plus">+</button>
                                 </div>
                                 <button class="btn-add-cart" onclick="addToCart('${product.name}')">Add to Cart</button>
-                                <button class="btn-wishlist"><i class='bx bx-heart'></i></button>
+                                <button class="btn-wishlist" onclick="addToWishlist(this, '${product.name}')"><i class='bx bx-heart'></i></button>
                             </div>
 
                             <div class="pd-meta">
@@ -172,6 +173,23 @@
         function addToCart(name) {
             const qty = document.getElementById('qty-display').textContent;
             alert(`Added ${qty} x ${name} to your cart!`);
+        }
+
+        function addToWishlist(btn, name) {
+            const icon = btn.querySelector('i');
+            
+            if (icon.classList.contains('bxs-heart')) {
+                icon.classList.remove('bxs-heart');
+                icon.classList.add('bx-heart');
+                icon.style.color = ''; 
+                alert(`${name} has been removed from your wishlist.`);
+                
+            } else {
+                icon.classList.remove('bx-heart');
+                icon.classList.add('bxs-heart');
+                icon.style.color = '#ff4757';
+                alert(`${name} has been added to your wishlist!`);
+            }
         }
     </script>
 </body>

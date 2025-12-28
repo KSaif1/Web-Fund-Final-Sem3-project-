@@ -53,7 +53,14 @@
                     <p>By logging in, I confirm that I have read and understand the <span class="privacy-link">Privacy Policy</span> and accept and agree to the <span class="privacy-link">Terms and Conditions</span>.</p>
                     <form>
                         <div class="form-group"><label>Email <span class="required">*</span></label><input type="email" required></div>
-                        <div class="form-group"><label>Password <span class="required">*</span></label><input type="password" required></div>
+                        
+                        <div class="form-group">
+                            <label>Password <span class="required">*</span></label>
+                            <div style="position: relative;">
+                                <input type="password" id="login-pass" required>
+                                <button type="button" id="toggleLoginPass" class="toggle-password">SHOW</button>
+                            </div>
+                        </div>
                         <div><button type="submit" class="btn-signin">SIGN IN</button><a href="#" class="forgot-password">Forgot Your Password?</a></div>
                         <div class="required-fields">* Required Fields</div>
                     </form>
@@ -83,6 +90,7 @@
             <div class="footer-column">
                 <h3>Customer Care</h3>
                 <a href="contact-us.html">Contact Us</a>
+                <a href="team.html">Meet The Team</a>
             </div>
             <div class="footer-column">
                 <h3>Newsletter</h3>
@@ -101,6 +109,15 @@
 
 
     <script>
+
+        const toggleBtn = document.getElementById('toggleLoginPass');
+        const passInput = document.getElementById('login-pass');
+
+        toggleBtn.addEventListener('click', function() {
+            const type = passInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passInput.setAttribute('type', type);
+            this.textContent = type === 'password' ? 'SHOW' : 'HIDE';
+        });
 
         const loginForm = document.querySelector('form');
         const loginSection = document.querySelector('.login-section');

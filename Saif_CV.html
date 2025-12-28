@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Saif AlHaq</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e9ecef;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .resume-container {
+            background: white;
+            width: 100%;
+            max-width: 1000px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            min-height: 1100px;
+            position: relative;
+        }
+        .sidebar {
+            background-color: #1a2530;
+            color: white;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.2);
+            overflow: hidden;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .contact-info h3, .skills-section h3, .edu-section h3 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #aab2bd;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .contact-item i {
+            font-size: 18px;
+            color: #4da6ff;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #4da6ff;
+        }
+
+        .skill-bar-container {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            font-size: 13px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .bar-bg {
+            background: rgba(255,255,255,0.1);
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            background: #4da6ff;
+            height: 100%;
+            border-radius: 3px;
+        }
+
+        .edu-item {
+            margin-bottom: 20px;
+        }
+
+        .edu-degree {
+            display: block;
+            font-weight: 600;
+            font-size: 15px;
+            color: white;
+        }
+
+        .edu-school {
+            font-size: 13px;
+            color: #aab2bd;
+            font-style: italic;
+        }
+
+        .edu-year {
+            font-size: 12px;
+            color: #6c757d;
+            margin-top: 2px;
+            display: block;
+        }
+
+        .main-content {
+            padding: 60px 50px;
+        }
+
+        .header-name h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: #1a2530;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .header-role {
+            font-size: 18px;
+            color: #4da6ff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: #1a2530;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            height: 2px;
+            background: #e9ecef;
+            flex-grow: 1;
+        }
+
+        .section-title i {
+            color: #4da6ff;
+            font-size: 24px;
+        }
+
+        .summary-text {
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .project-item {
+            margin-bottom: 30px;
+        }
+
+        .project-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+        .project-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a2530;
+        }
+
+        .project-tech {
+            font-size: 12px;
+            background: #f1f3f5;
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .project-desc {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            background: #1a2530;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+            z-index: 100;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.1);
+            background: #4da6ff;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="team.html" class="back-btn" title="Back to Team"><i class='bx bx-arrow-back'></i></a>
+
+    <div class="resume-container">
+        
+        <aside class="sidebar">
+            <div class="profile-photo">
+                <img src="images/Saif.jpg" alt="Saif AlHaq">
+            </div>
+
+            <div class="contact-info">
+                <h3>Contact</h3>
+                <div class="contact-item">
+                    <i class='bx bx-envelope'></i>
+                    <a href="mailto:saifkilani12@gmail.com">saifkilani12@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class='bx bx-phone'></i>
+                    <span>+60 0146490533</span>
+                </div>
+                <div class="contact-item">
+                    <i class='bx bx-map'></i>
+                    <span>Subang Jaya, Sunway City</span>
+                </div>
+            </div>
+
+            <div class="edu-section">
+                <h3>Education</h3>
+                
+                <div class="edu-item">
+                    <span class="edu-degree">Bachelor in Computer Science (Honours)</span>
+                    <span class="edu-school">Sunway University</span>
+                    <span class="edu-year">2025-2027</span>
+                </div>
+
+            <div class="skills-section">
+                <h3>Expertise</h3>
+                
+                <div class="skill-bar-container">
+                    <span class="skill-name">Python</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 95%;"></div></div>
+                </div>
+
+                <div class="skill-bar-container">
+                    <span class="skill-name">Java</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 85%;"></div></div>
+                </div>
+
+                <div class="skill-bar-container">
+                    <span class="skill-name">Javascript</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 75%;"></div></div>
+                </div>
+
+                <div class="skill-bar-container">
+                    <span class="skill-name">HTML</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 65%;"></div></div>
+                </div>
+
+                <div class="skill-bar-container">
+                    <span class="skill-name">CSS</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 55%;"></div></div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <div class="header-name">
+                <h1>Saif AlHaq Na'el Mohammed Al-Kilani</h1>
+                <span class="header-role">Lead Developer</span>
+            </div>
+
+            <p class="summary-text">
+                A student working towards gaining the experience required to develop apps, games, websites and more.
+            </p>
+
+            <h2 class="section-title"><i class='bx bx-briefcase'></i> Projects</h2>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-title">ShoeStore E-Commerce Platform</span>
+                    <span class="project-tech">HTML, CSS, JS</span>
+                </div>
+                <p class="project-desc">
+                    A website mean to showcase my design capabilities while maintaining user-friendliness. Follows a sleek modern design and ensures user error is prevented.
+                </p>
+            </div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-title">University Student Database</span>
+                    <span class="project-tech">Python</span>
+                </div>
+                <p class="project-desc">
+                    Built a program similar to Sunway's IZone. it stores student information and registers students into their desired courses and does all that is expected from a program meant to cater to a students' or lecturers' needs.
+                </p>
+            </div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-title">Pokemon Console Replica</span>
+                    <span class="project-tech">Java</span>
+                </div>
+                <p class="project-desc">
+                    A replica of a Pokemon game made to run in the console. It utilizes OOP(Object Oriented Programming) principles and applies them to make it expandable and reusable.
+                </p>
+            </div>
+
+            <h2 class="section-title"><i class='bx bx-certification'></i> Certifications</h2>
+            
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-title">FIST</span>
+                    <span class="project-tech">2024</span>
+                </div>
+                <p class="project-desc">Completed the Sunway Foundation program with 3.81 GPA.</p>
+            </div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-title">SAT 2</span>
+                    <span class="project-tech">2022</span>
+                </div>
+                <p class="project-desc">American certifications given upon the completion of the SAT 2's.</p>
+            </div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-title">ACT</span>
+                    <span class="project-tech">2021</span>
+                </div>
+                <p class="project-desc">American certifcations given upon the completion of the ACT's</p>
+            </div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-title">IGCSE Arabic A Level</span>
+                    <span class="project-tech">2022</span>
+                </div>
+                <p class="project-desc">Completed the A Level Arabic 1 and 2 examination.</p>
+            </div>
+
+            <div class="project-item">
+                <div class="project-head">
+                    <span class="project-title">OSD A2 German</span>
+                    <span class="project-tech">2022</span>
+                </div>
+                <p class="project-desc">Completed a OSD A2 Level German examination.</p>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>

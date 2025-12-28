@@ -83,6 +83,7 @@
             <div class="footer-column">
                 <h3>Customer Care</h3>
                 <a href="contact-us.html">Contact Us</a>
+                <a href="team.html">Meet The Team</a>
             </div>
             <div class="footer-column">
                 <h3>Newsletter</h3>
@@ -97,5 +98,82 @@
             <p>&copy; 2024 ShoeStore Inc. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const qtyButtons = document.querySelectorAll('.quantity-btn');
+            
+            qtyButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const quantityContainer = this.parentElement;
+                    const quantitySpan = quantityContainer.querySelector('span');
+                    let currentQty = parseInt(quantitySpan.textContent);
+                    
+                    if (this.textContent === '+') {
+                        currentQty++;
+                    } else if (this.textContent === '-') {
+                        if (currentQty > 1) {
+                            currentQty--;
+                        }
+                    }
+                    quantitySpan.textContent = currentQty;
+                    updateCartTotals();
+                });
+            });
+
+            function updateCartTotals() {
+                let total = 0;
+                const items = document.querySelectorAll('.cart-item');
+                
+                items.forEach(item => {
+                    const priceText = item.querySelector('.cart-item-price').textContent;
+                    const price = parseFloat(priceText.replace('$', ''));
+                    const qtyText = item.querySelector('.cart-item-quantity span').textContent;
+                    const qty = parseInt(qtyText);
+                    total += price * qty;
+                });
+
+                const summaryRows = document.querySelectorAll('.summary-row span:last-child');
+                if(summaryRows.length >= 3) {
+                    const formattedTotal = '$' + total.toFixed(2);
+                    summaryRows[0].textContent = formattedTotal;
+                    summaryRows[2].textContent = formattedTotal;
+                }
+            }
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const removeButtons = document.querySelectorAll('.remove-btn');
+            
+            removeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const cartItem = this.closest('.cart-item');
+                    cartItem.remove();
+                    updateCartState();
+                });
+            });
+
+            function updateCartState() {
+                const items = document.querySelectorAll('.cart-item');
+                const checkoutBtn = document.querySelector('.checkout-btn');
+                const summaryTotals = document.querySelectorAll('.summary-row span:last-child');
+                if (items.length === 0) {
+                    checkoutBtn.disabled = true;
+                    checkoutBtn.style.backgroundColor = '#cccccc';
+                    checkoutBtn.style.cursor = 'not-allowed';
+                    checkoutBtn.textContent = "Cart is Empty";
+                    checkoutBtn.removeAttribute('onclick');
+                    summaryTotals.forEach(span => {
+                        if (span.textContent.includes('$') || span.textContent === 'Free') {
+                            span.textContent = '$0.00';
+                        }
+                    });
+                    document.querySelector('.cart-items').innerHTML = '<div style="text-align:center; padding:40px; color:#666;">Your cart is empty.</div>';
+                }
+            }
+        });
+    </script>
+
 </body>
 </html>
