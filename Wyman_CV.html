@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional CV | Timeline Edition</title>
+    <style>
+        :root {
+            --primary: #0f172a;    /* Charcoal Navy */
+            --accent: #2563eb;     /* Professional Blue */
+            --border: #e2e8f0;     /* Light Gray */
+            --text-main: #334155;
+            --text-muted: #64748b;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            color: var(--text-main);
+            margin: 0;
+            padding: 50px 20px;
+        }
+
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+
+        /* --- HEADER --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        .header-text h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .header-text p {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin: 5px 0 0 0;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; /* Circular for this professional look */
+            border: 4px solid var(--border);
+            object-fit: cover;
+        }
+
+        /* --- TIMELINE SECTION --- */
+        .section-grid {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            color: var(--primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            padding-bottom: 30px;
+            border-left: 2px solid var(--border);
+        }
+
+        /* The dot on the timeline */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .timeline-item h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .timeline-item .sub {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .timeline-item .date {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* --- SKILLS PILLS --- */
+        .skills-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .pill {
+            background: var(--border);
+            color: var(--primary);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .section-grid { grid-template-columns: 1fr; }
+            header { flex-direction: column-reverse; text-align: center; }
+            .profile-img { margin-bottom: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        <header>
+            <div class="header-text">
+                <h1>Hang Wyman</h1>
+                <p>Computer Science Student</p>
+                <div style="margin-top: 15px; color: var(--text-muted); font-size: 0.9rem;">
+                    📧 wyhang07@gmail.com | 📍 Petaling Jaya, Malaysia
+                </div>
+            </div>
+            <img src="images/Wyman.jpeg" alt="my face" class="profile-img">
+        </header>
+
+        <div class="section-grid">
+             <div class="section-title">Me</div>
+            <div class="content">
+                <div class="timeline-item">
+                    <h3>About me</h3>
+                    <p>First year student learning how to code to make apps.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section-grid">
+            <div class="section-title">Education</div>
+            <div class="content">
+                <div class="timeline-item">
+                    <h3>Bachelor in Computer Science</h3>
+                    <span class="sub">Sunway University</span>
+                    <span class="date">2024 — 2025</span>
+                    <p>Focused on relational database design, query optimization, and data structures.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-grid">
+            <div class="section-title">Experiences</div>
+            <div class="content">
+                <div class="timeline-item">
+                    <h3>Certification</h3>
+                    <span class="date">2022 — 2025</span>
+                    <p>IGCSE, FIST, Kangaroo Math</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Projects</h3>
+                    <span class="date">2024 — 2025</span>
+                    <p>Pokemon game replica, ShoeStore Website</p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-grid">
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-wrap">
+                <span class="pill">HTML</span>
+                <span class="pill">CSS</span>
+                <span class="pill">Java</span>
+                <span class="pill">Python</span>
+                <span class="pill">Javascript</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
