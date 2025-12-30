@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Bryce Tan</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            box-sizing:border-box;
+            margin:0;
+            padding:0;
+        }
+
+        body {
+            font-family:'Inter',sans-serif;
+            background:#f3f6f8;
+            color:#222;
+            display:flex;
+            justify-content:center;
+            padding:40px;
+        }
+
+        .resume {
+            width:100%;
+            max-width:1000px;
+            background:#fff;
+            box-shadow:0 20px 40px rgba(15,23,30,0.08);
+            display:grid;
+            grid-template-columns:300px 1fr;
+            overflow:hidden;
+        }
+
+        .left {
+            background:#0f1720;
+            color:#fff;
+            padding:36px;
+            display:flex;
+            flex-direction:column;
+            gap:28px;
+        }
+
+        .photo {
+            width:150px;
+            height:150px;
+            border-radius:50%;
+            overflow:hidden;
+            margin:0 auto;
+            border:4px solid rgba(255,255,255,0.08);
+        }
+
+        .photo img {
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+
+        h1.name {
+            font-family:'Playfair Display',serif;
+            font-size:28px;
+            text-align:center;
+            color:#fff;
+        }
+
+        .role {
+            text-align:center;
+            color:#93c5fd;
+            font-weight:700;
+            letter-spacing:1px;
+        }
+
+        .section-title {
+            font-size:12px;
+            text-transform:uppercase;
+            color:#cbd5e1;
+            letter-spacing:2px;
+            margin-bottom:12px;
+        }
+
+        .contact-item {
+            font-size:14px;
+            color:#e6eef8;
+            display:flex;
+            gap:10px;
+            align-items:center;
+            margin-bottom:10px;
+        }
+
+        .contact-item a {
+            color:inherit;
+            text-decoration:none;
+        }
+
+        .edu .item,.skill .item {
+            margin-bottom:14px;
+        }
+
+        .edu .degree {
+            font-weight:700;
+        }
+
+        .skill-label {
+            display:flex;
+            justify-content:space-between;
+            font-size:13px;
+            color:#e6eef8;
+        }
+
+        .bar {
+            background:rgba(255,255,255,0.08);
+            height:8px;
+            border-radius:6px;
+            overflow:hidden;
+        }
+
+        .bar > i {
+            display:block;
+            height:100%;
+            background:#60a5fa;
+        }
+
+        .main {
+            padding:44px;
+        }
+
+        .main .head {
+            display:flex;
+            flex-direction:column;
+            gap:6px;
+        }
+
+        .main h2 {
+            font-family:'Playfair Display',serif;
+            font-size:34px;
+            color:#0f1720;
+        }
+
+        .main .title {
+            color:#60a5fa;
+            font-weight:700;
+            letter-spacing:1px;
+        }
+
+        .about {
+            color:#374151;
+            margin-top:16px;
+        }
+
+        .block {
+            margin-top:30px;
+        }
+
+        .job {
+            margin-bottom:20px;
+        }
+
+        .job .meta {
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .job .meta .period {
+            font-size:13px;
+            color:#6b7280;
+        }
+
+        .job h3 {
+            font-size:16px;
+            margin-top:6px;
+        }
+
+        .skills-list {
+            display:flex;
+            flex-wrap:wrap;
+            gap:10px;
+            margin-top:10px;
+        }
+
+        .chip {
+            background:#eef2ff;
+            padding:6px 10px;
+            border-radius:6px;
+            font-weight:600;
+            color:#1e293b;
+            font-size:13px;
+        }
+
+        .back {
+            position:fixed;
+            left:24px;
+            top:24px;
+            background:#0f1720;
+            color:#fff;
+            width:48px;
+            height:48px;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-decoration:none;
+            box-shadow:0 8px 20px rgba(2,6,23,0.15);
+        }
+
+        @media(max-width:880px) {
+            body{padding:16px}.resume{grid-template-columns:1fr;
+                min-height:unset}.left{flex-direction:row;
+                    gap:16px;
+                    padding:16px;
+                    align-items:center}.photo{width:96px;height:96px}.main{padding:20px}
+                }
+
+    </style>
+</head>
+
+<body>
+    <a class="back" href="team.html" title="Back to Team"><i class='bx bx-arrow-back'></i></a>
+    <div class="resume">
+        <aside class="left">
+            <div class="photo">
+                <img src="images/Bryce.jpg" alt="Bryce Tan">
+            </div>
+            <div>
+                <h1 class="name">Bryce Tan</h1>
+                <div class="role">Front-End Developer</div>
+            </div>
+
+            <div>
+                <div class="section-title">Contact</div>
+                <div class="contact-item"><i class='bx bx-envelope'></i><a href="mailto:bryce.tan@example.com">bryce.tan@example.com</a></div>
+                <div class="contact-item"><i class='bx bx-phone'></i><span>+60 12-345 6789</span></div>
+                <div class="contact-item"><i class='bx bx-map'></i><span>Subang Jaya, Malaysia</span></div>
+            </div>
+
+            <div class="edu">
+                <div class="section-title">Education</div>
+                <div class="item">
+                    <div class="degree">BSc (Hons) Computer Science</div>
+                    <div class="school">Sunway University</div>
+                    <div class="year">2023 — Present</div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="section-title">Technical Skills</div>
+                <div class="item">
+                    <div class="skill-label"><span>HTML & CSS</span><span>90%</span></div>
+                    <div class="bar"><i style="width:90%"></i></div>
+                </div>
+                <div class="item">
+                    <div class="skill-label"><span>JavaScript</span><span>80%</span></div>
+                    <div class="bar"><i style="width:80%"></i></div>
+                </div>
+                <div class="item">
+                    <div class="skill-label"><span>React</span><span>70%</span></div>
+                    <div class="bar"><i style="width:70%"></i></div>
+                </div>
+                <div class="item">
+                    <div class="skill-label"><span>Python</span><span>65%</span></div>
+                    <div class="bar"><i style="width:65%"></i></div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main">
+            <div class="head">
+                <h2>Bryce Tan</h2>
+                <div class="title">Front-End Developer — UI/UX Focus</div>
+            </div>
+
+            <div class="about block">
+                <div class="section-title">About Me</div>
+                <p>I am a dedicated front-end developer and Sunway University student focused on building responsive, accessible, and performant web experiences. I enjoy transforming designs into polished interfaces and collaborating across teams to deliver user-centered solutions.</p>
+            </div>
+
+            <div class="experience block">
+                <div class="section-title">Experience</div>
+                <div class="job">
+                    <div class="meta"><strong>Front-End Intern — XYZ Studio</strong><span class="period">Jun 2024 — Aug 2024</span></div>
+                    <h3>UI implementation & component development</h3>
+                    <p>Worked on building responsive components in React, improved performance by optimising assets and reducing bundle size, and collaborated with designers to refine interactions.</p>
+                </div>
+
+                <div class="job">
+                    <div class="meta"><strong>Web Developer — University Projects</strong><span class="period">2023 — Present</span></div>
+                    <h3>Team lead on multiple course projects</h3>
+                    <p>Led development for course projects including an e-commerce frontend and a student portal. Implemented responsive layouts, form validation, and client-side routing.</p>
+                </div>
+            </div>
+
+            <div class="projects block">
+                <div class="section-title">Selected Projects</div>
+                <div class="job">
+                    <h3>ShoeStore E-Commerce</h3>
+                    <p>Full front-end for an e-commerce prototype with product listing, filters, and cart interaction. Built with HTML, CSS, and vanilla JavaScript.</p>
+                </div>
+                <div class="job">
+                    <h3>University Student Database</h3>
+                    <p>Backend-focused project using Python for data handling; contributed front-end dashboard and UX improvements.</p>
+                </div>
+            </div>
+
+            <div class="tech block">
+                <div class="section-title">Tools & Technologies</div>
+                <div class="skills-list">
+                    <span class="chip">HTML</span>
+                    <span class="chip">CSS / SASS</span>
+                    <span class="chip">JavaScript</span>
+                    <span class="chip">React</span>
+                    <span class="chip">Git</span>
+                    <span class="chip">Figma</span>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
